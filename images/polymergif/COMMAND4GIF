@@ -1,0 +1,5 @@
+install ImageMagick
+
+
+convert -delay 17 -loop 0 *.png video.gif
+
