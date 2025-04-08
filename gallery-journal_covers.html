@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>research-group/journal_covers</title>
+
+    <!-- Bootstrap para la cuadrícula -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- BaguetteBox para la galería lightbox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="assets/css/main.css"> <!-- Mantiene tus estilos -->
+
+    <style>
+        /* Mantener el mismo fondo azul del index */
+        body {
+            background-color: #141d26;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .gallery-container {
+            padding: 20px;
+        }
+
+        /* Cuadrícula de imágenes con borde blanco y fondo personalizado */
+        .gallery-item {
+            background: #141d26; /* Fondo del contenedor de la imagen */
+            border: 1px solid white; /* Borde blanco */
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            width: 100%;
+            aspect-ratio: 3/4; /* Proporción fija */
+            max-width: 350px; /* Tamaño máximo */
+            margin: auto;
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        /* Personalización del Lightbox */
+        .baguetteBox-overlay {
+            background: rgba(30, 58, 95, 0.95) !important; /* Azul semitransparente */
+        }
+
+        /* Botones del Lightbox */
+        .baguetteBox-button {
+            background: rgba(255, 255, 255, 0.2) !important;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .baguetteBox-button:hover {
+            background: rgba(255, 255, 255, 0.5) !important;
+        }
+
+    </style>
+</head>
+<body class="is-preload">
+
+    <div class="container gallery-container">
+        <h1 class="text-center">Gallery: Journal Covers</h1>
+
+        <div class="tz-gallery">
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="images/mamobx_v054i017.jpg">
+                        <div class="gallery-item">
+                            <img src="images/mamobx_v054i017.jpg" alt="Cover: Macromolecules 54, 8033-8042 (2021)">
+                        </div>
+                    </a>
+                    <p>Cover: <i>Macromolecules</i> <b>54</b>, 8033-8042 (2021)</p>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="images/nalefd.2024.24.issue-39.xlargecover.jpg">
+                        <div class="gallery-item">
+                            <img src="images/nalefd.2024.24.issue-39.xlargecover.jpg" alt="Cover: Nano Letters 24, 12054-12061 (2024)">
+                        </div>
+                    </a>
+                    <p>Cover: <i>Nano Letters</i> <b>24</b>, 12054–12061 (2024)</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.tz-gallery', {
+            animation: 'fadeIn',
+            noScrollbars: true
+        });
+    </script>
+
+</body>
+</html>

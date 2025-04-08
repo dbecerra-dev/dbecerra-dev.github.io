@@ -2746,6 +2746,7 @@ body {
 
 /* Section/Article */
 
+
 	section.special, article.special {
 		text-align: center;
 	}
@@ -3089,6 +3090,7 @@ body {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
+		gap: 40px; /* ajusta según el espacio que desees entre columnas */
 		-moz-align-items: center;
 		-webkit-align-items: center;
 		-ms-align-items: center;
@@ -3446,6 +3448,206 @@ body {
 		}
 
 /* Main */
+
+
+
+.main a[href*="orcid.org"]:hover {
+    color: #F98E78 !important; /* Naranjo al pasar el mouse */
+}
+
+<style>
+.custom-icons {
+    text-align: center; /* Centra los íconos */
+    margin-top: 20px; /* Espaciado arriba */
+    margin-bottom: 20px; /* Espaciado abajo */
+}
+
+.custom-icons li {
+    display: inline-block; /* Para que los íconos estén en línea */
+    margin: 0 10px; /* Espaciado entre los íconos */
+}
+
+.custom-icons a {
+    font-size: 20px; /* Tamaño de los íconos */
+    color: #ffffff !important; /* Color blanco por defecto */
+    transition: color 0.3s ease-in-out; /* Suaviza el cambio de color */
+}
+
+.custom-icons a:hover {
+    color: #F98E78 !important; /* Color al hacer hover */
+}
+
+.custom-icons {
+    display: flex;
+    justify-content: center; /* Centra los íconos horizontalmente */
+    align-items: center; /* Asegura que los íconos estén alineados verticalmente */
+    flex-wrap: wrap; /* Permite que los íconos se acomoden si no hay suficiente espacio */
+    gap: 10px; /* Espaciado entre íconos */
+    margin: 1px auto; /* Espaciado con respecto a otras líneas */
+    padding: 20px 0; /* Espaciado interno */
+    width: 100%; /* Asegura que el bloque ocupe todo el ancho disponible */
+}
+
+</style>
+
+:root {
+    --purple-background: #F98E78; /* Fondo morado */
+    --text-color: #000000; /* Color del texto */
+    --spacing: 20px; /* Espacio entre bloques */
+    --font-size: 16px; /* Tamaño de fuente */
+    --box-title-font-size: 18px; /* Tamaño de título */
+}
+
+.research-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: var(--spacing); /* Espacio entre los bloques */
+    justify-items: center;
+    align-items: start;
+}
+
+.research-box {
+    background-color: var(--purple-background);
+    color: black;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 100%; /* Ajustable */
+    width: 80%;
+    transition: all 0.3s ease;
+}
+
+.research-box:hover {
+    background-color: #F98E78; /* Morado más oscuro al pasar el ratón */
+}
+
+.research-box .box-title {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.research-box .box-info {
+    display: none;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.research-box.open .box-info {
+    display: block;
+}
+
+.research-box img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.lorem-ipsum {
+    font-size: 18px;
+    color: black; /* Texto en negro, modificable */
+}
+
+
+
+/* Eliminar márgenes y rellenos predeterminados */
+#second .content ul {
+    padding: 0; /* Eliminar padding */
+
+    margin: 0; /* Eliminar márgenes */
+}
+
+#second .content li {
+    font-size: 16px; /* Tamaño de letra */
+    margin-bottom: 10px; /* Ajuste de espacio entre publicaciones */
+    padding: 0; /* Eliminar padding adicional */
+    line-height: 1.5; /* Controlar la altura de las líneas */
+}
+
+#second .content p {
+    font-size: 18px; /* Tamaño de texto dentro de cada publicación */
+    color: white; /* Color de texto general */
+    margin: 0; /* Eliminar márgenes adicionales */
+    padding: 0; /* Eliminar padding adicional */
+}
+
+/* Estilo para el enlace DOI */
+#second .content a {
+    color: #F98E78; /* Color del DOI */
+    text-decoration: none; /* Quitar subrayado */
+    transition: color 0.3s; /* Transición suave del color */
+}
+
+#second .content a:hover {
+    color: #B0B0B0; /* Color del DOI cuando se pasa el mouse */
+}
+
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.gallery-item {
+    text-decoration: none; /* Quita subrayado */
+}
+
+.gallery-box {
+    background-color: #4A4A4A; /* Color de fondo */
+    color: white; /* Color de texto */
+    padding: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.gallery-box:hover {
+    background-color: #F98E78; /* Color al pasar el mouse */
+}
+
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Style for each gallery item (link) */
+.gallery-item {
+    text-decoration: none; /* Remove underline */
+}
+
+/* Style for the individual gallery box */
+.gallery-box {
+    background-color: #4A4A4A; /* Dark background color */
+    color: white; /* Text color */
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; /* Fixed height */
+}
+
+.gallery-box h3 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Hover effect */
+.gallery-box:hover {
+    background-color: #F98E78; /* Light orange color */
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+}
+
+
 
 	#main {
 		background-color: #0e1c27ff;

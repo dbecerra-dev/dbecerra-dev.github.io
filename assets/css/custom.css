@@ -1,0 +1,720 @@
+/* ========== 1. 4K (2560px) ========== */
+@media screen and (max-width: 2560px) {
+  /* Tus estilos específicos para pantallas 4K aquí */
+}
+
+/* ========== 2. Laptop grande (1440px) ========== */
+@media screen and (max-width: 1440px) {
+  /* Tus estilos específicos para laptop grande aquí */
+
+  /* Reducir texto en la sección de perfil */
+  #home .spotlight > div:nth-child(2) p {
+    font-size: 14px !important;
+  }
+
+  #home .spotlight > div:nth-child(2) p:first-child {
+    font-size: 18px !important;
+  }
+
+  /* Íconos alineados horizontalmente y centrados */
+  .custom-icons {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    list-style: none;
+  }
+
+  .custom-icons li {
+    margin: 0 !important;
+  }
+}
+
+/* ========== 3. Laptop estándar (1024px) ========== */
+@media screen and (max-width: 1024px) {
+  /* Tus estilos específicos para laptop estándar aquí */
+
+  /* 1. Reducir tamaño del texto en bloque de perfil */
+#home .spotlight > div:nth-child(2) div {
+  font-size: 12px !important;
+}
+#home .spotlight a[href*="academictree.org"] {
+    font-size: 17px !important;
+  }
+#home .spotlight > div:nth-child(2) p {
+  font-size: 11px !important;
+}
+
+#home .spotlight > div:nth-child(2) p:first-child {
+  font-size: 14px !important;
+}
+
+/* 2. Íconos: reducir tamaño y centrar horizontalmente */
+.custom-icons {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.75em;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.custom-icons li {
+  margin: 0 !important;
+  font-size: 1em;
+}
+
+.custom-icons .icon {
+  font-size: 1.2em !important; /* tamaño más pequeño del ícono */
+}
+
+/* 3. Reducir títulos y textos en Research Areas */
+.research-container .box-title {
+  font-size: 20px !important;
+}
+
+.research-container .box-info p {
+  font-size: 14px !important;
+  line-height: 1.5em;
+}
+}
+
+/* ========== 4. Tablet (768px) ========== */
+@media screen and (max-width: 768px) {
+  /* Tus estilos específicos para tablet aquí */
+
+  #nav {
+   display: flex !important;
+   justify-content: center;
+   align-items: center;
+   position: sticky;   /* se mantiene arriba al hacer scroll */
+   top: 0;
+   background: #1e1e1e;  /* igual que en desktop */
+   z-index: 1000;
+   padding: 0.5em 0;
+ }
+
+ #nav ul {
+   display: flex !important;
+   flex-direction: row;
+   gap: 1.5em;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+ }
+
+ #nav ul li a {
+   color: #F98E78 !important;
+   font-weight: 500;
+   font-size: 14px;
+   text-decoration: none;
+   transition: color 0.3s ease;
+ }
+
+ #nav ul li a:hover {
+   color: #ffffff !important;
+ }
+
+
+ /* ========== Forzar layout de 2 columnas en sección #home ========== */
+ body {
+   overflow-x: hidden;
+ }
+
+ #home .spotlight {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+ #home .spotlight > div:nth-child(1) {
+   width: 60% !important;
+ }
+
+ #home .spotlight > div:nth-child(2) {
+   width: 35% !important;
+ }
+
+ #home .spotlight > div:nth-child(1) p {
+  font-size: 14px !important;
+  text-align: left !important;
+  line-height: 1.6em;
+}
+
+#home .spotlight > div:nth-child(2) p:nth-child(1) {
+  font-size: 12px !important;  /* Diego Becerra */
+}
+
+#home .spotlight > div:nth-child(2) p:nth-child(2),
+#home .spotlight > div:nth-child(2) p:nth-child(3),
+#home .spotlight > div:nth-child(2) p:nth-child(4) {
+  font-size: 9px !important;
+}
+
+#home .spotlight > div:nth-child(2) p:nth-child(5) {
+  font-size: 12px !important;  /* correo electrónico */
+}
+
+.custom-icons {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: nowrap;
+  gap: 10px;
+  font-size: 0.85em;
+  margin-top: 0.0em;
+}
+
+.custom-icons li {
+  margin: 0 !important;
+}
+
+.custom-icons .icon {
+  font-size: 1.0em !important;
+}
+
+ /* Ajuste visual adicional: evitar que se rompa en pantallas más angostas dentro de tablet */
+ @media screen and (max-width: 700px) {
+   #home .spotlight {
+     flex-direction: column !important;
+   }
+
+   #home .spotlight > div {
+     width: 100% !important;
+   }
+ }
+
+  /* Limitar altura total de los botones y ajustar contenido */
+  .gallery-grid .gallery-box {
+    height:85px !important;                /* altura fija */
+    padding: 0.5em 1em !important;
+    font-size: 14px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Ajustar título dentro del botón */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1em;
+  }
+
+  /* Reducir tamaño del título dentro de cada botón */
+.gallery-grid .gallery-box h3 {
+  font-size: 16px !important;
+  margin: 0.5em 0;
+}
+
+
+/* ===== Ajustes para Research Areas ===== */
+
+/* Aumentar el ancho de cada bloque */
+.research-container .research-box {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto 1em auto;
+}
+
+/* Título más pequeño */
+.research-container .box-title {
+  font-size: 15px !important;
+}
+
+/* Texto más compacto */
+.research-container .box-info p {
+  font-size: 11px !important;
+  line-height: 1.5em;
+}
+
+/* Imagen más ajustada dentro del bloque */
+.research-container .box-info img {
+  max-width: 100% !important;
+  margin-bottom: 0em;
+}
+
+/* Centrado forzado del footer */
+#footer {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  padding: 2em 0;
+  background: transparent;
+}
+
+#footer p {
+  margin: 0 auto !important;
+  font-size: 13px !important;
+  color: #999 !important;
+  text-align: center !important;
+}
+
+}
+
+
+/* ========== 5. Móvil grande (425px) ========== */
+@media screen and (max-width: 425px) {
+  /* Tus estilos específicos para móvil grande aquí */
+
+  /* Barra superior para mobile grande */
+  #nav {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0.em 0 !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    background-color: rgba(30, 30, 30, 0.85);  /* semitransparente */
+    backdrop-filter: blur(5px);  /* efecto suave al fondo */
+    z-index: 1000;
+    padding: 0.0em 0.0em;
+    width: 100%;
+  }
+
+  #nav ul {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 0.5em;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  #nav ul li {
+    flex: 1 1 30%;  /* permite dos filas si es necesario */
+    text-align: center;
+  }
+
+  #nav ul li a {
+    font-size: 13px !important;
+    padding: 0.3em 0.6em;
+    color: #F98E78 !important;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block;
+  }
+
+  #nav ul li a:hover {
+    color: #ffffff !important;
+  }
+
+  #nav ul li a:focus,
+  #nav ul li a:active {
+  color: #F98E78 !important;
+  background: none !important;
+  outline: none;
+}
+
+#nav {
+  background-color: rgba(30, 30, 30, 0.0);  /* completamente transparente al inicio */
+  backdrop-filter: blur(4px);
+  transition: background-color 0.3s ease;
+}
+
+#nav.scrolled {
+  background-color: rgba(30, 30, 30, 0.4);  /* translúcido, no opaco */
+}
+
+#home {
+  padding-top: 5.5em !important;
+  padding-bottom: 1.5em !important;
+}
+
+  /* Forzar el contenedor .spotlight a expandirse y centrarlo manualmente */
+  #home .spotlight {
+    width: 180% !important;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* El div del texto principal dentro del spotlight */
+  #home .spotlight > div:nth-child(1) {
+    width: 100% !important;
+    padding: 0 1em !important;
+    box-sizing: border-box;
+  }
+
+  #home .spotlight > div:nth-child(1) p {
+    font-size: 12px !important;
+    text-align: left !important;
+    margin: 0 0 1em 0;
+    width: 100%;
+  }
+
+  /* ==== Academic Tree link ==== */
+#home .spotlight a[href*="academictree.org"] {
+  font-size: 13px !important;
+  display: block;
+  margin: 0.5em auto;
+  text-align: center;
+}
+
+/* ==== Botón Curriculum Vitae ==== */
+#home .spotlight .button {
+  font-size: 13px !important;
+  padding: 1em 0em !important;
+  line-height: 1em;
+}
+
+/* ==== Íconos de redes (ResearchGate, GitHub, etc.) ==== */
+.custom-icons {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.75em !important;
+  margin-top: 0.0em;
+}
+
+.custom-icons .icon {
+  font-size: 1em !important;
+}
+
+
+/* Contenedor principal: cambia a layout de columna */
+.research-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0em;
+}
+
+/* Cada área ocupa toda la pantalla, una debajo de otra */
+.research-container .research-box {
+  width: 100vw !important;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  padding: 1em;
+  margin: 0 !important;
+}
+
+/* Título de cada área */
+.research-container .box-title {
+  font-size: 14px !important;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+/* Imagen */
+.research-container .box-info img {
+  max-width: 100% !important;
+  height: auto;
+  margin-bottom: 0.5em;
+}
+
+/* Texto */
+.research-container .box-info p {
+  font-size: 12px !important;
+  text-align: left;
+  line-height: 1.5em;
+}
+
+#publications.main {
+  padding-left: 1em !important;
+  padding-right: 1em !important;
+}
+
+#publications.main .content ul li p {
+  font-size: 12px !important;
+  line-height: 1.5em;
+  text-align: left;
+}
+
+}
+
+/* ========== 6. Móvil mediano (375px) ========== */
+@media screen and (max-width: 375px) {
+  /* Tus estilos específicos para móvil mediano aquí */
+    /* Barra superior para mobile grande */
+    #nav {
+      width: 100vw !important;
+      max-width: 100vw !important;
+      margin: 0 !important;
+      padding: 0.em 0 !important;
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      background-color: rgba(30, 30, 30, 0.85);  /* semitransparente */
+      backdrop-filter: blur(5px);  /* efecto suave al fondo */
+      z-index: 1000;
+      padding: 0.0em 0.0em;
+      width: 100%;
+    }
+
+
+  
+    #nav ul {
+      display: flex !important;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 0em;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+  
+    #nav ul li {
+      flex: 1 1 30%;  /* permite dos filas si es necesario */
+      text-align: center;
+    }
+  
+    #nav ul li a {
+      font-size: 13px !important;
+      padding: 0.3em 0.6em;
+      color: #F98E78 !important;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      display: inline-block;
+    }
+  
+    #nav ul li a:hover {
+      color: #ffffff !important;
+    }
+  
+    #nav ul li a:focus,
+    #nav ul li a:active {
+    color: #F98E78 !important;
+    background: none !important;
+    outline: none;
+  }
+  
+  #nav {
+    background-color: rgba(30, 30, 30, 0.0);  /* completamente transparente al inicio */
+    backdrop-filter: blur(4px);
+    transition: background-color 0.3s ease;
+  }
+  
+  #nav.scrolled {
+    background-color: rgba(30, 30, 30, 0.4);  /* translúcido, no opaco */
+  }
+  
+  #home {
+    padding-top: 5.5em !important;
+    padding-bottom: 1.5em !important;
+  }
+
+  /* Reducir tamaño del GIF, pero mantenerlo alineado a la izquierda */
+  #home .spotlight > div:nth-child(1) img[src*="coarse.gif"] {
+    max-width: 25% !important;
+    height: auto !important;
+    display: block;
+    margin: 0 0 1em 0;  /* elimina centrado */
+  }
+  
+    /* Forzar el contenedor .spotlight a expandirse y centrarlo manualmente */
+    #home .spotlight {
+      width: 180% !important;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  
+    /* El div del texto principal dentro del spotlight */
+    #home .spotlight > div:nth-child(1) {
+      width: 100% !important;
+      padding: 0 1em !important;
+      box-sizing: border-box;
+    }
+  
+    #home .spotlight > div:nth-child(1) p {
+      font-size: 12px !important;
+      text-align: left !important;
+      margin: 0 0 1em 0;
+      width: 100%;
+    }
+  
+    /* ==== Academic Tree link ==== */
+  #home .spotlight a[href*="academictree.org"] {
+    font-size: 13px !important;
+    display: block;
+    margin: 0.5em auto;
+    text-align: center;
+  }
+  
+  /* ==== Botón Curriculum Vitae ==== */
+  #home .spotlight .button {
+    font-size: 13px !important;
+    padding: 1em 0em !important;
+    line-height: 1em;
+  }
+  
+  /* ==== Íconos de redes (ResearchGate, GitHub, etc.) ==== */
+  .custom-icons {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.75em !important;
+    margin-top: 0.0em;
+  }
+  
+  .custom-icons .icon {
+    font-size: 1em !important;
+  }
+
+  /* ORCID: permitir que se expanda o rompa correctamente */
+#home .spotlight a.removelinkdefault {
+  display: block !important;
+  font-size: 11px !important;
+  width: 100% !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
+  line-height: 1.4em;
+}
+  
+  
+  /* Contenedor principal: cambia a layout de columna */
+  .research-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0em;
+  }
+  
+  /* Cada área ocupa toda la pantalla, una debajo de otra */
+  .research-container .research-box {
+    width: 100vw !important;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    padding: 1em;
+    margin: 0 !important;
+  }
+  
+  /* Título de cada área */
+  .research-container .box-title {
+    font-size: 14px !important;
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+  
+  /* Imagen */
+  .research-container .box-info img {
+    max-width: 100% !important;
+    height: auto;
+    margin-bottom: 0.5em;
+  }
+  
+  /* Texto */
+  .research-container .box-info p {
+    font-size: 12px !important;
+    text-align: left;
+    line-height: 1.5em;
+  }
+  
+  #publications.main {
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+  }
+  
+  #publications.main .content ul li p {
+    font-size: 12px !important;
+    line-height: 1.5em;
+    text-align: left;
+  }
+
+  /* Reducir espacio vertical entre publicaciones */
+#publications.main .content ul li {
+  margin-bottom: 0.75em !important;
+}
+
+#publications.main .content ul li p {
+  font-size: 12px !important;
+  line-height: 1.4em;
+  margin: 0 !important;
+}
+}
+
+/* ========== 7. Móvil pequeño (320px) ========== */
+@media screen and (max-width: 320px) {
+  /* Tus estilos específicos para móvil pequeño aquí */
+
+   /* Barra de navegación más ancha y reorganizada */
+   #nav {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0.5em 0 !important;
+    background-color: rgba(30, 30, 30, 0.0); /* transparente al inicio */
+    backdrop-filter: blur(4px);
+    box-sizing: border-box;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  #nav.scrolled {
+    background-color: rgba(30, 30, 30, 0.4);
+  }
+
+  #nav ul {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    grid-auto-rows: auto;
+    gap: 0.0em;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    justify-items: center;
+  }
+
+  #nav ul li a {
+    font-size: 11px !important;
+    padding: 0.3em 0.4em;
+    color: #F98E78 !important;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  #nav ul li a:hover {
+    color: #ffffff !important;
+  }
+
+  #nav ul li a:focus,
+  #nav ul li a:active {
+    color: #F98E78 !important;
+    background: none !important;
+    outline: none;
+  }
+
+  #home .spotlight > div:nth-child(1) p {
+    font-size: 11px !important;
+  }
+}
