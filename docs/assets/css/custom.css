@@ -728,4 +728,19 @@
   white-space: normal !important;
   line-height: 1.4em;
 }
+
+.removelinkdefault {
+  display: inline-flex !important;
+  align-items: center;
+  white-space: nowrap !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.removelinkdefault img {
+  flex-shrink: 0;
+  margin-right: 0.5em;
+}
+
 }
