@@ -717,4 +717,15 @@
   #home .spotlight > div:nth-child(1) p {
     font-size: 11px !important;
   }
+
+    /* ORCID: permitir que se expanda o rompa correctamente */
+#home .spotlight a.removelinkdefault {
+  display: block !important;
+  font-size: 10px !important;
+  width: 100% !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
+  line-height: 1.4em;
+}
 }
