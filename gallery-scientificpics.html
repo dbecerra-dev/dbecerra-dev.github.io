@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>research-group/journal_covers</title>
+
+    <!-- Bootstrap para la cuadrícula -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- BaguetteBox para la galería lightbox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="assets/css/main.css"> <!-- Mantiene tus estilos -->
+
+    <style>
+        /* Mantener el mismo fondo azul del index */
+        body {
+            background-color: #141d26;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .gallery-container {
+            padding: 20px;
+        }
+
+        /* Cuadrícula de imágenes con borde blanco y fondo personalizado */
+        .gallery-item {
+            background: #141d26; /* Fondo del contenedor de la imagen */
+            border: 1px solid white; /* Borde blanco */
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            width: 100%;
+            aspect-ratio: 3/4; /* Proporción fija */
+            max-width: 350px; /* Tamaño máximo */
+            margin: auto;
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        /* Personalización del Lightbox */
+        .baguetteBox-overlay {
+            background: rgba(30, 58, 95, 0.95) !important; /* Azul semitransparente */
+        }
+
+        /* Botones del Lightbox */
+        .baguetteBox-button {
+            background: rgba(255, 255, 255, 0.2) !important;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .baguetteBox-button:hover {
+            background: rgba(255, 255, 255, 0.5) !important;
+        }
+
+    </style>
+</head>
+<body class="is-preload">
+
+    <div class="container gallery-container">
+        <h1 class="text-center">Gallery: Scientific Pictures</h1>
+
+        <div class="tz-gallery">
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="images/sci_pics/amidebond.png">
+                        <div class="gallery-item">
+                            <img src="images/sci_pics/amidebond.png" alt="potential amide bond">
+                        </div>
+                    </a>
+                    <p style="text-align: left;">Potential amide bond formation during the crosslinking process between 
+                        two monomers-trimesoyl chloride and m-phenylenediamine 
+                        (Image created with Blender using the GAFF force field.)</p>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="images/sci_pics/cover.png">
+                        <div class="gallery-item">
+                            <img src="images/sci_pics/cover.png" alt="crystalline">
+                        </div>
+                    </a>
+                    <p style="text-align: left;">Artistic representation of molecules with crystalline moieties attached
+                        (Image created with Blender.)
+                    </p>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="images/sci_pics/pore.png">
+                        <div class="gallery-item">
+                            <img src="images/sci_pics/pore.png" alt="pore">
+                        </div>
+                    </a>
+                    <p style="text-align: left;">Nanopore consisting of a carbon nanotube surrounded by a polymeric matrix. 
+                        (Image created with VMD from an MD trajectory.)
+                    </p>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="images/sci_pics/hbn.png">
+                        <div class="gallery-item">
+                            <img src="images/sci_pics/hbn.png" alt="hbn">
+                        </div>
+                    </a>
+                    <p style="text-align: left;">Periodic nanochannel composed of a graphene layer and an underlying substrate 
+                        of three stacked layers of hexagonal boron nitride, with water flowing inside. 
+                        (Image created with OVITO from an MD trajectory.)
+                    </p>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="images/sci_pics/wca.png">
+                        <div class="gallery-item">
+                            <img src="images/sci_pics/wca.png" alt="wca">
+                        </div>
+                    </a>
+                    <p style="text-align: left;">Nanoscopic water contact angle measurement on a polymer substrate coated with graphene. 
+                        (Image created with OVITO from an MD trajectory.)
+                    </p>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="images/sci_pics/polymer.gif">
+                        <div class="gallery-item">
+                            <img src="images/sci_pics/polymer.gif" alt="polymer chain">
+                        </div>
+                    </a>
+                    <p style="text-align: left;">Linear polymer chain with polyethylene oxide chemistry. 
+                        (Image created with OVITO from an MD trajectory.)
+                    </p>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="images/sci_pics/initconf-render.png">
+                        <div class="gallery-item">
+                            <img src="images/sci_pics/initconf-render.png" alt="polymer melt">
+                        </div>
+                    </a>
+                    <p style="text-align: left;">Artistic representation of a non-relaxed (initial configuration) polymer melt. 
+                        (Image created with OVITO and other tools.)
+                    </p>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="images/sci_pics/initandpp.png">
+                        <div class="gallery-item">
+                            <img src="images/sci_pics/initandpp.png" alt="pp">
+                        </div>
+                    </a>
+                    <p style="text-align: left;">Artistic representation of a polymer melt and its primitive path. 
+                        (Image created with OVITO and other tools from an MD trajectory.)
+                    </p>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="images/sci_pics/sliplink.png">
+                        <div class="gallery-item">
+                            <img src="images/sci_pics/sliplink.png" alt="slip link">
+                        </div>
+                    </a>
+                    <p style="text-align: left;">Schematic of a slip-link model used to describe entangled polymer dynamics. 
+                        (Image created with Blender.)
+                    </p>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="images/sci_pics/eo.png">
+                        <div class="gallery-item">
+                            <img src="images/sci_pics/eo.png" alt="eo-sclcp">
+                        </div>
+                    </a>
+                    <p style="text-align: left;">Schematic representation of an end-on side-chain liquid crystal polymer.
+                        (Image created with OVITO from an MD trajectory.)
+                    </p>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="images/sci_pics/so.png">
+                        <div class="gallery-item">
+                            <img src="images/sci_pics/so.png" alt="so-sclcp">
+                        </div>
+                    </a>
+                    <p style="text-align: left;">Schematic representation of a side-on side-chain liquid crystal polymer.
+                        (Image created with OVITO from an MD trajectory.)
+                    </p>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="images/sci_pics/prolatebox.png">
+                        <div class="gallery-item">
+                            <img src="images/sci_pics/prolatebox.png" alt="so-sclcp box">
+                        </div>
+                    </a>
+                    <p style="text-align: left;">Computational box filled with side-on side-chain liquid crystal polymers at high temperature.
+                        (Image created with OVITO from an MD trajectory.)
+                    </p>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="images/sci_pics/0_tilted.png">
+                        <div class="gallery-item">
+                            <img src="images/sci_pics/0_tilted.png" alt="eo system mesophase">
+                        </div>
+                    </a>
+                    <p style="text-align: left;">End-on side-chain liquid crystal polymeric system at low temperature,
+                        where a lamellar and smectic-B mesophase can be observed.
+                        (Image created with OVITO from an MD trajectory.)
+                    </p>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="images/sci_pics/100_tilted.png">
+                        <div class="gallery-item">
+                            <img src="images/sci_pics/100_tilted.png" alt="eo system mesophase">
+                        </div>
+                    </a>
+                    <p style="text-align: left;">Side-on side-chain liquid crystal polymeric system at low temperature,
+                        where a quasi-hexagonal and nematic mesophase can be observed.
+                        (Image created with OVITO from an MD trajectory.)
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.tz-gallery', {
+            animation: 'fadeIn',
+            noScrollbars: true
+        });
+    </script>
+
+</body>
+</html>
