@@ -1,117 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>research-group/journal_covers</title>
-
-    <!-- Bootstrap para la cuadrícula -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- BaguetteBox para la galería lightbox -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
-    <link rel="stylesheet" href="assets/css/main.css"> <!-- Mantiene tus estilos -->
-
-    <style>
-        /* Mantener el mismo fondo azul del index */
-        body {
-            background-color: #141d26;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-
-        .gallery-container {
-            padding: 20px;
-        }
-
-        /* Cuadrícula de imágenes con borde blanco y fondo personalizado */
-        .gallery-item {
-            background: #141d26; /* Fondo del contenedor de la imagen */
-            border: 1px solid white; /* Borde blanco */
-            border-radius: 8px;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            width: 100%;
-            aspect-ratio: 3/4; /* Proporción fija */
-            max-width: 350px; /* Tamaño máximo */
-            margin: auto;
-        }
-
-        .gallery-item img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        p {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 14px;
-            color: #ddd;
-        }
-
-        /* Personalización del Lightbox */
-        .baguetteBox-overlay {
-            background: rgba(30, 58, 95, 0.95) !important; /* Azul semitransparente */
-        }
-
-        /* Botones del Lightbox */
-        .baguetteBox-button {
-            background: rgba(255, 255, 255, 0.2) !important;
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            font-size: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.3s ease;
-        }
-
-        .baguetteBox-button:hover {
-            background: rgba(255, 255, 255, 0.5) !important;
-        }
-
-    </style>
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Gallery: Journal Covers | Diego Becerra</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
-<body class="is-preload">
+  <body class="is-preload gallery-page">
+    <div id="wrapper">
+      <header id="header" class="alt site-hero">
+        <span class="logo"><img src="gifs/coarse.webp" alt="Coarse-graining animation" /></span>
+      </header>
 
-    <div class="container gallery-container">
-        <h1 class="text-center">Gallery: Journal Covers</h1>
+      <nav id="nav">
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#research">Research</a></li>
+          <li><a href="index.html#publications">Publications</a></li>
+          <li><a href="index.html#education">Education</a></li>
+          <li><a href="index.html#gallery" class="active">Gallery</a></li>
+          <li><a href="index.html#code">Code</a></li>
+        </ul>
+      </nav>
 
-        <div class="tz-gallery">
-            <div class="row">
-                <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="images/mamobx_v054i017.jpg">
-                        <div class="gallery-item">
-                            <img src="images/mamobx_v054i017.jpg" alt="Cover: Macromolecules 54, 8033-8042 (2021)">
-                        </div>
-                    </a>
-                    <p>Cover: <i>Macromolecules</i> <b>54</b>, 8033-8042 (2021)</p>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                    <a class="lightbox" href="images/nalefd.2024.24.issue-39.xlargecover.jpg">
-                        <div class="gallery-item">
-                            <img src="images/nalefd.2024.24.issue-39.xlargecover.jpg" alt="Cover: Nano Letters 24, 12054-12061 (2024)">
-                        </div>
-                    </a>
-                    <p>Cover: <i>Nano Letters</i> <b>24</b>, 12054–12061 (2024)</p>
-                </div>
+      <div id="main">
+        <section class="main special">
+          <header class="major">
+            <h2>Gallery: Journal Covers</h2>
+          </header>
+          <p class="gallery-intro">Selected journal cover artworks associated with published research.</p>
 
-            </div>
-        </div>
+          <div class="gallery-grid-page">
+          <article class="gallery-card">
+            <a class="image-link" href="images/mamobx_v054i017.webp" data-title="Macromolecules cover, 2021" data-caption="Cover: Macromolecules 54, 8033–8042 (2021)">
+              <div class="gallery-thumb">
+                <img src="images/mamobx_v054i017.webp" alt="Cover: Macromolecules 54, 8033-8042 (2021)" loading="lazy" />
+              </div>
+            </a>
+            <p class="gallery-caption">Cover: <a href="https://pubs.acs.org/toc/mamobx/54/17" target="_blank" rel="noopener noreferrer"><i>Macromolecules</i> <b>54</b>, 8033–8042 (2021)</a></p>
+          </article>
+          <article class="gallery-card">
+            <a class="image-link" href="images/nalefd.2024.24.issue-39.xlargecover.webp" data-title="Nano Letters cover, 2024" data-caption="Cover: Nano Letters 24, 12054–12061 (2024)">
+              <div class="gallery-thumb">
+                <img src="images/nalefd.2024.24.issue-39.xlargecover.webp" alt="Cover: Nano Letters 24, 12054-12061 (2024)" loading="lazy" />
+              </div>
+            </a>
+            <p class="gallery-caption">Cover: <a href="https://pubs.acs.org/toc/nalefd/24/39" target="_blank" rel="noopener noreferrer"><i>Nano Letters</i> <b>24</b>, 12054–12061 (2024)</a></p>
+          </article>
+          <article class="gallery-card">
+            <a class="image-link" href="images/mamobx.2026.59.issue-1.xlargecover.webp" data-title="Macromolecules cover, 2025" data-caption="Cover: Macromolecules 59, 564–574 (2025)">
+              <div class="gallery-thumb">
+                <img src="images/mamobx.2026.59.issue-1.xlargecover.webp" alt="Cover: Macromolecules 59, 564-574 (2025)" loading="lazy" />
+              </div>
+            </a>
+            <p class="gallery-caption">Cover: <a href="https://pubs.acs.org/toc/mamobx/59/1" target="_blank" rel="noopener noreferrer"><i>Macromolecules</i> <b>59</b>, 564–574 (2025)</a></p>
+          </article>
+          </div>
+
+          <p class="back-link"><a class="button" href="index.html#gallery">Back to main page</a></p>
+        </section>
+      </div>
+
+      <footer id="footer">
+        <p class="copyright">© Diego Becerra. Based on a <a href="https://html5up.net">HTML5 UP</a> template.</p>
+      </footer>
     </div>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-    <script>
-        baguetteBox.run('.tz-gallery', {
-            animation: 'fadeIn',
-            noScrollbars: true
-        });
-    </script>
-
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/gallery-lightbox.js"></script>
 </body>
 </html>

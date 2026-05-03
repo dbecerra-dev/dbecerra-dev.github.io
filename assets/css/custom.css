@@ -1,731 +1,1372 @@
-/* ========== 1. 4K (2560px) ========== */
-@media screen and (max-width: 2560px) {
-  /* Tus estilos específicos para pantallas 4K aquí */
+
+/*
+  Diego Becerra site rebuild
+  Base: untouched HTML5 UP Stellar main.css
+  Custom file only controls palette, content layout, cards, and responsive calibration.
+*/
+:root {
+  --db-bg: #141d26;
+  --db-panel: #0e1c27;
+  --db-panel-soft: #152638;
+  --db-text: #ffffff;
+  --db-muted: rgba(255,255,255,0.72);
+  --db-accent: #F98E78;
+  --db-green: #A6CE39;
+  --db-card: #4A4A4A;
+  --db-research: #F98E78;
+  --db-research-text: #111111;
+  --db-radius: 0.65rem;
 }
 
-/* ========== 2. Laptop grande (1440px) ========== */
-@media screen and (max-width: 1440px) {
-  /* Tus estilos específicos para laptop grande aquí */
-
-  /* Reducir texto en la sección de perfil */
-  #home .spotlight > div:nth-child(2) p {
-    font-size: 14px !important;
-  }
-
-  #home .spotlight > div:nth-child(2) p:first-child {
-    font-size: 18px !important;
-  }
-
-  /* Íconos alineados horizontalmente y centrados */
-  .custom-icons {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 10px;
-    padding: 0;
-    margin: 0 auto;
-    width: 100%;
-    list-style: none;
-  }
-
-  .custom-icons li {
-    margin: 0 !important;
-  }
+html { scroll-behavior: auto; }
+body {
+  background-color: var(--db-bg);
+  background-image: none;
+  color: var(--db-text);
+}
+body, input, select, textarea { color: var(--db-text); }
+a { border-bottom: 0; }
+a:hover { color: var(--db-accent); }
+strong, b, h1, h2, h3, h4, h5, h6 { color: var(--db-text); }
+#wrapper { max-width: 64em; }
+#main { background: var(--db-panel); color: var(--db-text); }
+#main > .main { border-top-color: rgba(255,255,255,0.10); padding: 2.2em 3.5em 2.1em 3.5em; }
+#main .major h2:after { background-color: var(--db-accent); background-image: none; }
+#main p { color: var(--db-text); }
+.button, input[type="submit"], input[type="reset"], input[type="button"], button {
+  box-shadow: inset 0 0 0 1px var(--db-accent);
+  color: var(--db-text) !important;
+}
+.button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover {
+  background-color: rgba(249,142,120,0.13);
 }
 
-/* ========== 3. Laptop estándar (1024px) ========== */
-@media screen and (max-width: 1024px) {
-  /* Tus estilos específicos para laptop estándar aquí */
-
-  /* 1. Reducir tamaño del texto en bloque de perfil */
-#home .spotlight > div:nth-child(2) div {
-  font-size: 12px !important;
+/* Header: still Stellar, but compact and academic. */
+#header.site-hero { padding: 3.6em 3em 2.2em 3em; }
+#header.site-hero .logo { margin-bottom: 1em; }
+#header.site-hero .logo img {
+  width: min(180px, 34vw);
+  max-height: 118px;
+  object-fit: contain;
+  border-radius: 0.35rem;
 }
-#home .spotlight a[href*="academictree.org"] {
-    font-size: 17px !important;
-  }
-#home .spotlight > div:nth-child(2) p {
-  font-size: 11px !important;
-}
+#header.site-hero h1 { margin-bottom: 0.25em; }
+#header.site-hero p { color: var(--db-muted); }
 
-#home .spotlight > div:nth-child(2) p:first-child {
-  font-size: 14px !important;
+/* Navigation */
+#nav {
+  background: #f3f3f3;
+  color: var(--db-accent);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.08);
 }
+#nav ul li a { color: var(--db-accent); font-weight: 500; }
+#nav ul li a:hover { color: var(--db-panel); background-color: rgba(249,142,120,0.16); }
+#nav ul li a.active { color: var(--db-panel); background-color: rgba(249,142,120,0.22); }
 
-/* 2. Íconos: reducir tamaño y centrar horizontalmente */
+/* Home */
+.home-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(270px, 0.9fr);
+  gap: 2.2em;
+  align-items: start;
+}
+.home-copy { width: auto !important; }
+.home-copy p { text-align: left; line-height: 1.65; margin-bottom: 0; }
+.home-card {
+  width: auto !important;
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--db-radius);
+  padding: 1.05em;
+  text-align: left;
+}
+.profile-top {
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr);
+  gap: 1em;
+  align-items: start;
+}
+.profile-image { display: block; margin: 0; }
+.profile-image img {
+  width: 118px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.45rem;
+  display: block;
+}
+.profile-text h2 { font-size: 1.05em; margin: 0 0 0.25em 0; line-height: 1.15; }
+.profile-text p { font-size: 0.72em; line-height: 1.25; margin: 0 0 0.45em 0; color: var(--db-text); }
+.profile-text a { color: var(--db-accent); overflow-wrap: anywhere; }
+.profile-links { list-style: none; margin: 0.85em 0 0.75em 0; padding: 0; }
+.profile-links li { margin: 0.15em 0; padding: 0; font-size: 0.72em; line-height: 1.3; }
+.profile-links a { color: var(--db-green); overflow-wrap: anywhere; }
+.profile-links a:hover { color: var(--db-text); }
+.profile-actions { margin: 0.75em 0 0.65em 0; }
+.profile-actions .button { font-size: 0.72em; min-width: 0; width: 100%; padding: 0 1em; }
 .custom-icons {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
+  display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  font-size: 0.75em;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  width: 100%;
+  margin: 0;
   padding: 0;
-  margin: 0 auto;
+}
+.custom-icons li { padding: 0; margin: 0; }
+.custom-icons .icon.alt { border-color: rgba(255,255,255,0.22); color: var(--db-text) !important; }
+.custom-icons .icon.alt:hover { background-color: var(--db-accent); color: var(--db-text) !important; }
+
+/* Research cards */
+.section-intro { color: var(--db-muted); margin-top: -0.8em; }
+.research-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1em;
+  align-items: start;
+}
+.research-box {
+  background: var(--db-research);
+  color: var(--db-research-text);
+  border-radius: var(--db-radius);
+  padding: 1em;
+  cursor: pointer;
+  min-height: 4.6em;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.research-box:hover, .research-box:focus { transform: translateY(-2px); filter: brightness(1.03); outline: none; }
+.research-box .box-title { color: #fff; font-weight: 600; font-size: 1.02em; line-height: 1.22; }
+.research-box .box-info {
+  display: none;
+  background: #fff;
+  color: #000;
+  border-radius: calc(var(--db-radius) * 0.8);
+  margin-top: 0.85em;
+  padding: 1em;
+  text-align: left;
+}
+.research-box.open .box-info { display: block; }
+.research-box .box-info p, .research-box .lorem-ipsum { color: #000 !important; font-size: 0.78em; line-height: 1.5; margin-bottom: 0; }
+.research-box img { display: block; max-width: 100%; height: auto; margin: 0 auto 0.75em auto; border-radius: 0.35rem; }
+
+/* Publications */
+.publication-list ul { list-style: none; margin: 0; padding: 0; }
+.publication-list li { padding-left: 0; margin: 0 0 0.9em 0; }
+.publication-list p { font-size: 0.78em; line-height: 1.5; margin-bottom: 0; }
+.publication-list a { color: var(--db-accent); overflow-wrap: anywhere; }
+.publication-list a:hover { color: #B0B0B0; }
+.publication-list b { color: var(--db-text) !important; }
+
+/* Gallery cards on home */
+.gallery-cards { margin-top: 1.5em; }
+.gallery-cards li {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--db-radius);
+  padding: 1.5em 1em;
 }
 
-.custom-icons li {
-  margin: 0 !important;
-  font-size: 1em;
+/* Footer */
+#footer { text-align: center; padding: 2.2em 0; }
+#footer .copyright { width: 100%; color: rgba(255,255,255,0.55); }
+
+/* Standalone gallery pages */
+.gallery-page #main > .main { padding-top: 2em; }
+.gallery-page .gallery-grid-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1em;
+  margin-top: 1.2em;
+}
+.gallery-page .gallery-grid-page a {
+  display: block;
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--db-radius);
+  padding: 0.55em;
+}
+.gallery-page .gallery-grid-page img {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: contain;
+  border-radius: 0.35rem;
+  background: rgba(255,255,255,0.03);
+}
+.gallery-page .back-link { margin-top: 1.2em; }
+
+/* Calibration: large laptops */
+@media screen and (max-width: 1440px) {
+  #wrapper { max-width: 62em; }
+  .profile-text p, .profile-links li { font-size: 0.68em; }
+  .profile-text h2 { font-size: 0.98em; }
 }
 
-.custom-icons .icon {
-  font-size: 1.2em !important; /* tamaño más pequeño del ícono */
+/* Calibration: laptop/tablet transition */
+@media screen and (max-width: 980px) {
+  #main > .main { padding: 1.9em 2em 1.8em 2em; }
+  .home-grid { grid-template-columns: minmax(0, 1.25fr) minmax(235px, 0.85fr); gap: 1.4em; }
+  .profile-top { grid-template-columns: 92px minmax(0, 1fr); gap: 0.75em; }
+  .profile-image img { width: 92px; }
+  .profile-text p, .profile-links li { font-size: 0.6em; }
+  .profile-text h2 { font-size: 0.82em; }
+  .profile-actions .button { font-size: 0.62em; height: 2.5em; line-height: 2.5em; }
+  .custom-icons { gap: 0.35em; }
+  .custom-icons .icon.alt { width: 2.05em; height: 2.05em; line-height: 2.05em; }
+  .research-container { grid-template-columns: 1fr; }
+  .research-box .box-title { font-size: 0.9em; }
 }
 
-/* 3. Reducir títulos y textos en Research Areas */
-.research-container .box-title {
-  font-size: 20px !important;
-}
-
-.research-container .box-info p {
-  font-size: 14px !important;
-  line-height: 1.5em;
-}
-}
-
-/* ========== 4. Tablet (768px) ========== */
+/* Calibration: tablets, keeps home in two columns */
 @media screen and (max-width: 768px) {
-  /* Tus estilos específicos para tablet aquí */
-
-  #nav {
-   display: flex !important;
-   justify-content: center;
-   align-items: center;
-   position: sticky;   /* se mantiene arriba al hacer scroll */
-   top: 0;
-   background: #1e1e1e;  /* igual que en desktop */
-   z-index: 1000;
-   padding: 0.5em 0;
- }
-
- #nav ul {
-   display: flex !important;
-   flex-direction: row;
-   gap: 1.5em;
-   list-style: none;
-   margin: 0;
-   padding: 0;
- }
-
- #nav ul li a {
-   color: #F98E78 !important;
-   font-weight: 500;
-   font-size: 14px;
-   text-decoration: none;
-   transition: color 0.3s ease;
- }
-
- #nav ul li a:hover {
-   color: #ffffff !important;
- }
-
-
- /* ========== Forzar layout de 2 columnas en sección #home ========== */
- body {
-   overflow-x: hidden;
- }
-
- #home .spotlight {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  justify-content: space-between;
-  gap: 2em;
+  #header.site-hero { padding: 2.2em 1.2em 1.25em 1.2em; }
+  #header.site-hero .logo img { width: 128px; max-height: 90px; }
+  #header.site-hero h1 { font-size: 1.85em; }
+  #header.site-hero p { font-size: 0.95em; }
+  #nav { position: sticky; top: 0; z-index: 1000; border-radius: 0; background: #1e1e1e; }
+  #nav ul { display: flex; flex-wrap: nowrap; justify-content: center; gap: 0.2em; width: 100%; }
+  #nav ul li { padding: 0; }
+  #nav ul li a { font-size: 0.68em; padding: 0.55em 0.5em; color: var(--db-accent); }
+  #nav ul li a.active { color: var(--db-text); background: rgba(249,142,120,0.20); }
+  #main > .main { padding: 1.55em 1.25em 1.45em 1.25em; }
+  .home-grid { grid-template-columns: 58% minmax(0, 42%); gap: 1em; }
+  .home-copy p { font-size: 0.76em; line-height: 1.55; }
+  .home-card { padding: 0.8em; }
+  .profile-top { grid-template-columns: 76px minmax(0, 1fr); gap: 0.65em; }
+  .profile-image img { width: 76px; }
+  .profile-text h2 { font-size: 0.76em; }
+  .profile-text p, .profile-links li { font-size: 0.52em; line-height: 1.25; }
+  .profile-links { margin: 0.55em 0; }
+  .profile-actions { margin: 0.45em 0 0.5em 0; }
+  .custom-icons .icon.alt { width: 1.9em; height: 1.9em; line-height: 1.9em; }
+  .publication-list p { font-size: 0.66em; }
+  .gallery-cards li { padding: 1em 0.7em; }
 }
 
- #home .spotlight > div:nth-child(1) {
-   width: 60% !important;
- }
-
- #home .spotlight > div:nth-child(2) {
-   width: 35% !important;
- }
-
- #home .spotlight > div:nth-child(1) p {
-  font-size: 14px !important;
-  text-align: left !important;
-  line-height: 1.6em;
+/* Calibration: phones */
+@media screen and (max-width: 620px) {
+  #wrapper { width: 100%; }
+  #main { border-radius: 0; }
+  #nav ul { flex-wrap: wrap; gap: 0; }
+  #nav ul li { flex: 1 1 33.333%; text-align: center; }
+  #nav ul li a { display: block; font-size: 0.68em; padding: 0.42em 0.2em; }
+  #main > .main { padding: 1.35em 1em 1.25em 1em; }
+  .home-grid { display: block; }
+  .home-copy { margin-bottom: 1em; }
+  .home-copy p { font-size: 0.78em; line-height: 1.55; }
+  .home-card { max-width: 27rem; margin: 0 auto; }
+  .profile-top { grid-template-columns: 88px minmax(0, 1fr); }
+  .profile-image img { width: 88px; }
+  .profile-text h2 { font-size: 0.9em; }
+  .profile-text p, .profile-links li { font-size: 0.66em; }
+  .profile-actions .button { font-size: 0.66em; }
+  .research-box { padding: 0.85em; }
+  .research-box .box-info { padding: 0.85em; }
+  .research-box .box-info p, .research-box .lorem-ipsum { font-size: 0.72em; }
+  .publication-list p { font-size: 0.67em; line-height: 1.45; }
+  .gallery-page .gallery-grid-page { grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); }
+  .gallery-page .gallery-grid-page img { height: 165px; }
 }
 
-#home .spotlight > div:nth-child(2) p:nth-child(1) {
-  font-size: 12px !important;  /* Diego Becerra */
+/* Calibration: small phones */
+@media screen and (max-width: 425px) {
+  #header.site-hero h1 { font-size: 1.55em; }
+  #header.site-hero p { font-size: 0.82em; }
+  #main > .main { padding-left: 0.9em; padding-right: 0.9em; }
+  .home-copy p { font-size: 0.72em; }
+  .profile-top { grid-template-columns: 78px minmax(0, 1fr); gap: 0.6em; }
+  .profile-image img { width: 78px; }
+  .profile-text h2 { font-size: 0.82em; }
+  .profile-text p, .profile-links li { font-size: 0.6em; }
+  .publication-list p { font-size: 0.62em; }
+  .custom-icons .icon.alt { width: 1.8em; height: 1.8em; line-height: 1.8em; }
 }
 
-#home .spotlight > div:nth-child(2) p:nth-child(2),
-#home .spotlight > div:nth-child(2) p:nth-child(3),
-#home .spotlight > div:nth-child(2) p:nth-child(4) {
-  font-size: 9px !important;
-}
-
-#home .spotlight > div:nth-child(2) p:nth-child(5) {
-  font-size: 12px !important;  /* correo electrónico */
-}
-
-.custom-icons {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  flex-wrap: nowrap;
-  gap: 10px;
-  font-size: 0.85em;
-  margin-top: 0.0em;
-}
-
-.custom-icons li {
-  margin: 0 !important;
-}
-
-.custom-icons .icon {
-  font-size: 1.0em !important;
-}
-
- /* Ajuste visual adicional: evitar que se rompa en pantallas más angostas dentro de tablet */
- @media screen and (max-width: 700px) {
-   #home .spotlight {
-     flex-direction: column !important;
-   }
-
-   #home .spotlight > div {
-     width: 100% !important;
-   }
- }
-
-  /* Limitar altura total de los botones y ajustar contenido */
-  .gallery-grid .gallery-box {
-    height:85px !important;                /* altura fija */
-    padding: 0.5em 1em !important;
-    font-size: 14px !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Ajustar título dentro del botón */
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1em;
-  }
-
-  /* Reducir tamaño del título dentro de cada botón */
-.gallery-grid .gallery-box h3 {
-  font-size: 16px !important;
-  margin: 0.5em 0;
+/* Calibration: tiny phones */
+@media screen and (max-width: 340px) {
+  #nav ul li a { font-size: 0.62em; }
+  .profile-top { grid-template-columns: 66px minmax(0, 1fr); }
+  .profile-image img { width: 66px; }
+  .profile-text p, .profile-links li { font-size: 0.55em; }
 }
 
 
-/* ===== Ajustes para Research Areas ===== */
-
-/* Aumentar el ancho de cada bloque */
-.research-container .research-box {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 auto 1em auto;
-}
-
-/* Título más pequeño */
-.research-container .box-title {
-  font-size: 15px !important;
-}
-
-/* Texto más compacto */
-.research-container .box-info p {
-  font-size: 11px !important;
-  line-height: 1.5em;
-}
-
-/* Imagen más ajustada dentro del bloque */
-.research-container .box-info img {
-  max-width: 100% !important;
-  margin-bottom: 0em;
-}
-
-/* Centrado forzado del footer */
-#footer {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  text-align: center !important;
-  width: 100% !important;
-  padding: 2em 0;
+/* =========================
+   PROFILE PHOTO FIX
+   Avoids Stellar .spotlight .image circular avatar styling.
+========================= */
+#home .profile-image {
+  display: block;
+  width: 118px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0.45rem;
+  overflow: hidden;
   background: transparent;
 }
 
-#footer p {
-  margin: 0 auto !important;
-  font-size: 13px !important;
-  color: #999 !important;
-  text-align: center !important;
-}
-
-}
-
-
-/* ========== 5. Móvil grande (425px) ========== */
-@media screen and (max-width: 425px) {
-  /* Tus estilos específicos para móvil grande aquí */
-
-  /* Barra superior para mobile grande */
-  #nav {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin: 0 !important;
-    padding: 0.em 0 !important;
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: sticky;
-    top: 0;
-    background-color: rgba(30, 30, 30, 0.85);  /* semitransparente */
-    backdrop-filter: blur(5px);  /* efecto suave al fondo */
-    z-index: 1000;
-    padding: 0.0em 0.0em;
-    width: 100%;
-  }
-
-  #nav ul {
-    display: flex !important;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 0.5em;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-
-  #nav ul li {
-    flex: 1 1 30%;  /* permite dos filas si es necesario */
-    text-align: center;
-  }
-
-  #nav ul li a {
-    font-size: 13px !important;
-    padding: 0.3em 0.6em;
-    color: #F98E78 !important;
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    display: inline-block;
-  }
-
-  #nav ul li a:hover {
-    color: #ffffff !important;
-  }
-
-  #nav ul li a:focus,
-  #nav ul li a:active {
-  color: #F98E78 !important;
-  background: none !important;
-  outline: none;
-}
-
-#nav {
-  background-color: rgba(30, 30, 30, 0.0);  /* completamente transparente al inicio */
-  backdrop-filter: blur(4px);
-  transition: background-color 0.3s ease;
-}
-
-#nav.scrolled {
-  background-color: rgba(30, 30, 30, 0.4);  /* translúcido, no opaco */
-}
-
-#home {
-  padding-top: 5.5em !important;
-  padding-bottom: 1.5em !important;
-}
-
-  /* Forzar el contenedor .spotlight a expandirse y centrarlo manualmente */
-  #home .spotlight {
-    width: 180% !important;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
-  /* El div del texto principal dentro del spotlight */
-  #home .spotlight > div:nth-child(1) {
-    width: 100% !important;
-    padding: 0 1em !important;
-    box-sizing: border-box;
-  }
-
-  #home .spotlight > div:nth-child(1) p {
-    font-size: 12px !important;
-    text-align: left !important;
-    margin: 0 0 1em 0;
-    width: 100%;
-  }
-
-  /* ==== Academic Tree link ==== */
-#home .spotlight a[href*="academictree.org"] {
-  font-size: 13px !important;
+#home .profile-image img {
   display: block;
-  margin: 0.5em auto;
-  text-align: center;
-}
-
-/* ==== Botón Curriculum Vitae ==== */
-#home .spotlight .button {
-  font-size: 13px !important;
-  padding: 1em 0em !important;
-  line-height: 1em;
-}
-
-/* ==== Íconos de redes (ResearchGate, GitHub, etc.) ==== */
-.custom-icons {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  font-size: 0.75em !important;
-  margin-top: 0.0em;
-}
-
-.custom-icons .icon {
-  font-size: 1em !important;
-}
-
-
-/* Contenedor principal: cambia a layout de columna */
-.research-container {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  gap: 0em;
-}
-
-/* Cada área ocupa toda la pantalla, una debajo de otra */
-.research-container .research-box {
-  width: 100vw !important;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  box-sizing: border-box;
-  padding: 1em;
-  margin: 0 !important;
-}
-
-/* Título de cada área */
-.research-container .box-title {
-  font-size: 14px !important;
-  text-align: center;
-  margin-bottom: 0.5em;
-}
-
-/* Imagen */
-.research-container .box-info img {
-  max-width: 100% !important;
+  width: 100%;
   height: auto;
-  margin-bottom: 0.5em;
+  max-width: none;
+  border-radius: 0.45rem;
 }
 
-/* Texto */
-.research-container .box-info p {
-  font-size: 12px !important;
+@media screen and (max-width: 1280px) {
+  #home .profile-image { width: 104px; }
+}
+
+@media screen and (max-width: 980px) {
+  #home .profile-image { width: 92px; }
+}
+
+@media screen and (max-width: 736px) {
+  #home .profile-image { width: 88px; }
+}
+
+@media screen and (max-width: 480px) {
+  #home .profile-image { width: 78px; }
+}
+
+@media screen and (max-width: 360px) {
+  #home .profile-image { width: 66px; }
+}
+
+
+/* Highlight tipo "featured / front cover" */
+.featured {
+  color: #FFB6C1;
+  border: 1px solid #FFB6C1;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.8em;
+}
+
+/* ===== EDUCATION LAYOUT ===== */
+
+.education-tools-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2em;
+  margin-top: 1.5em;
+}
+
+/* LEFT */
+.edu-left {
+  flex: 1;
+}
+
+/* RIGHT */
+.edu-right {
+  flex: 1;
+  max-width: 350px;
+}
+
+/* YOUTUBE BUTTON */
+.edu-youtube {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.7em 1em;
+  border: 1px solid #F7A8B8;
+  border-radius: 8px;
+  color: #F7A8B8;
+  text-decoration: none;
+}
+
+.edu-youtube:hover {
+  background: rgba(247, 168, 184, 0.1);
+}
+
+/* SLIDES BUTTON */
+.edu-toggle {
+  width: 100%;
+  padding: 0.8em;
+  border: 1px solid #F7A8B8;
+  border-radius: 8px;
+  background: transparent;
+  color: #F7A8B8;
+  cursor: pointer;
+}
+
+/* SUB */
+.edu-sub {
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 0.5em;
+  background: transparent;
+  border: none;
+  color: #fff;
   text-align: left;
-  line-height: 1.5em;
+  cursor: pointer;
 }
 
-#publications.main {
-  padding-left: 1em !important;
-  padding-right: 1em !important;
+.edu-panel,
+.edu-sub-panel {
+  display: none;
+  padding-left: 1em;
 }
 
-#publications.main .content ul li p {
-  font-size: 12px !important;
-  line-height: 1.5em;
-  text-align: left;
+/* ===== SLIDES PRO ===== */
+
+.slides-box {
+  border: 1px solid rgba(247,168,184,0.4);
+  border-radius: 12px;
+  padding: 1em;
+  background: rgba(255,255,255,0.02);
 }
 
+/* Header */
+.slides-header {
+  font-size: 1.1em;
+  color: #F7A8B8;
+  margin-bottom: 0.8em;
+  font-weight: 500;
 }
 
-/* ========== 6. Móvil mediano (375px) ========== */
-@media screen and (max-width: 375px) {
-  /* Tus estilos específicos para móvil mediano aquí */
-    /* Barra superior para mobile grande */
-    #nav {
-      width: 100vw !important;
-      max-width: 100vw !important;
-      margin: 0 !important;
-      padding: 0.em 0 !important;
-      display: flex !important;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: sticky;
-      top: 0;
-      background-color: rgba(30, 30, 30, 0.85);  /* semitransparente */
-      backdrop-filter: blur(5px);  /* efecto suave al fondo */
-      z-index: 1000;
-      padding: 0.0em 0.0em;
-      width: 100%;
-    }
-
-
-  
-    #nav ul {
-      display: flex !important;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      gap: 0em;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-    }
-  
-    #nav ul li {
-      flex: 1 1 30%;  /* permite dos filas si es necesario */
-      text-align: center;
-    }
-  
-    #nav ul li a {
-      font-size: 13px !important;
-      padding: 0.3em 0.6em;
-      color: #F98E78 !important;
-      font-weight: 500;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      display: inline-block;
-    }
-  
-    #nav ul li a:hover {
-      color: #ffffff !important;
-    }
-  
-    #nav ul li a:focus,
-    #nav ul li a:active {
-    color: #F98E78 !important;
-    background: none !important;
-    outline: none;
-  }
-  
-  #nav {
-    background-color: rgba(30, 30, 30, 0.0);  /* completamente transparente al inicio */
-    backdrop-filter: blur(4px);
-    transition: background-color 0.3s ease;
-  }
-  
-  #nav.scrolled {
-    background-color: rgba(30, 30, 30, 0.4);  /* translúcido, no opaco */
-  }
-  
-  #home {
-    padding-top: 5.5em !important;
-    padding-bottom: 1.5em !important;
-  }
-
-  /* Reducir tamaño del GIF, pero mantenerlo alineado a la izquierda */
-  #home .spotlight > div:nth-child(1) img[src*="coarse.gif"] {
-    max-width: 25% !important;
-    height: auto !important;
-    display: block;
-    margin: 0 0 1em 0;  /* elimina centrado */
-  }
-  
-    /* Forzar el contenedor .spotlight a expandirse y centrarlo manualmente */
-    #home .spotlight {
-      width: 180% !important;
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 0 !important;
-      margin: 0 !important;
-    }
-  
-    /* El div del texto principal dentro del spotlight */
-    #home .spotlight > div:nth-child(1) {
-      width: 100% !important;
-      padding: 0 1em !important;
-      box-sizing: border-box;
-    }
-  
-    #home .spotlight > div:nth-child(1) p {
-      font-size: 12px !important;
-      text-align: left !important;
-      margin: 0 0 1em 0;
-      width: 100%;
-    }
-  
-    /* ==== Academic Tree link ==== */
-  #home .spotlight a[href*="academictree.org"] {
-    font-size: 13px !important;
-    display: block;
-    margin: 0.5em auto;
-    text-align: center;
-  }
-  
-  /* ==== Botón Curriculum Vitae ==== */
-  #home .spotlight .button {
-    font-size: 13px !important;
-    padding: 1em 0em !important;
-    line-height: 1em;
-  }
-  
-  /* ==== Íconos de redes (ResearchGate, GitHub, etc.) ==== */
-  .custom-icons {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    font-size: 0.75em !important;
-    margin-top: 0.0em;
-  }
-  
-  .custom-icons .icon {
-    font-size: 1em !important;
-  }
-
-  /* ORCID: permitir que se expanda o rompa correctamente */
-#home .spotlight a.removelinkdefault {
-  display: block !important;
-  font-size: 11px !important;
-  width: 100% !important;
-  word-wrap: break-word !important;
-  overflow-wrap: break-word !important;
-  white-space: normal !important;
-  line-height: 1.4em;
-}
-  
-  
-  /* Contenedor principal: cambia a layout de columna */
-  .research-container {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 0em;
-  }
-  
-  /* Cada área ocupa toda la pantalla, una debajo de otra */
-  .research-container .research-box {
-    width: 100vw !important;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    box-sizing: border-box;
-    padding: 1em;
-    margin: 0 !important;
-  }
-  
-  /* Título de cada área */
-  .research-container .box-title {
-    font-size: 14px !important;
-    text-align: center;
-    margin-bottom: 0.5em;
-  }
-  
-  /* Imagen */
-  .research-container .box-info img {
-    max-width: 100% !important;
-    height: auto;
-    margin-bottom: 0.5em;
-  }
-  
-  /* Texto */
-  .research-container .box-info p {
-    font-size: 12px !important;
-    text-align: left;
-    line-height: 1.5em;
-  }
-  
-  #publications.main {
-    padding-left: 1em !important;
-    padding-right: 1em !important;
-  }
-  
-  #publications.main .content ul li p {
-    font-size: 12px !important;
-    line-height: 1.5em;
-    text-align: left;
-  }
-
-  /* Reducir espacio vertical entre publicaciones */
-#publications.main .content ul li {
-  margin-bottom: 0.75em !important;
+/* Groups */
+.slides-group {
+  margin-bottom: 1em;
 }
 
-#publications.main .content ul li p {
-  font-size: 12px !important;
-  line-height: 1.4em;
-  margin: 0 !important;
-}
+.slides-title {
+  color: #fff;
+  font-size: 0.95em;
+  margin-bottom: 0.3em;
+  opacity: 0.8;
 }
 
-/* ========== 7. Móvil pequeño (320px) ========== */
-@media screen and (max-width: 320px) {
-  /* Tus estilos específicos para móvil pequeño aquí */
+/* Links */
+.slides-links a {
+  display: block;
+  font-size: 0.9em;
+  color: #ccc;
+  text-decoration: none;
+  margin-left: 0.5em;
+}
 
-   /* Barra de navegación más ancha y reorganizada */
-   #nav {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin: 0 !important;
-    padding: 0.5em 0 !important;
-    background-color: rgba(30, 30, 30, 0.0); /* transparente al inicio */
-    backdrop-filter: blur(4px);
-    box-sizing: border-box;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
+.slides-links a:hover {
+  color: #F7A8B8;
+}
+
+/* ===== MOBILE FIX ===== */
+
+@media screen and (max-width: 768px) {
+  .education-tools-row {
     flex-direction: column;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  #nav.scrolled {
-    background-color: rgba(30, 30, 30, 0.4);
   }
 
-  #nav ul {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-    grid-auto-rows: auto;
-    gap: 0.0em;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    justify-items: center;
+  .edu-right {
+    max-width: 100%;
   }
+}
 
-  #nav ul li a {
-    font-size: 11px !important;
-    padding: 0.3em 0.4em;
-    color: #F98E78 !important;
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
+/* =========================================================
+   EDUCATION FINAL OVERRIDE
+   YouTube button + Slides dropdown, stable with Stellar.
+========================================================= */
 
-  #nav ul li a:hover {
-    color: #ffffff !important;
-  }
+.education-tools-row {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px) !important;
+  gap: 1.5em !important;
+  align-items: start !important;
+  margin-top: 1.5em !important;
+  text-align: left !important;
+}
 
-  #nav ul li a:focus,
-  #nav ul li a:active {
-    color: #F98E78 !important;
-    background: none !important;
-    outline: none;
-  }
+.edu-left,
+.edu-right {
+  min-width: 0 !important;
+}
 
-  #home .spotlight > div:nth-child(1) p {
-    font-size: 11px !important;
-  }
+.edu-youtube {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.7em !important;
+  padding: 0.75em 1.05em !important;
+  border: 1px solid #F7A8B8 !important;
+  border-bottom: 1px solid #F7A8B8 !important;
+  border-radius: 0.65rem !important;
+  color: #F7A8B8 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  line-height: 1.2 !important;
+}
 
-    /* ORCID: permitir que se expanda o rompa correctamente */
-#home .spotlight a.removelinkdefault {
-  display: block !important;
-  font-size: 10px !important;
+.edu-youtube .icon {
+  font-size: 1.45em !important;
+  line-height: 1 !important;
+}
+
+.edu-youtube:hover,
+.edu-youtube:focus {
+  color: #ffffff !important;
+  background: rgba(255,255,255,0.10) !important;
+  border: 1px solid #F7A8B8 !important;
+  border-bottom: 1px solid #F7A8B8 !important;
+  outline: none !important;
+}
+
+.edu-right {
   width: 100% !important;
-  word-wrap: break-word !important;
-  overflow-wrap: break-word !important;
+  max-width: 360px !important;
+  justify-self: end !important;
+}
+
+.edu-toggle,
+.edu-sub {
+  display: block !important;
+  width: 100% !important;
+  font-family: inherit !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  background: rgba(255,255,255,0.025) !important;
+  border: 1px solid rgba(247,168,184,0.55) !important;
+  border-bottom: 1px solid rgba(247,168,184,0.55) !important;
+  border-radius: 0.65rem !important;
+  color: #F7A8B8 !important;
+  box-shadow: none !important;
+  height: auto !important;
+  line-height: 1.25 !important;
+  padding: 0.78em 1em !important;
+  margin: 0 !important;
+  min-width: 0 !important;
   white-space: normal !important;
-  line-height: 1.4em;
 }
+
+.edu-toggle::after,
+.edu-sub::after {
+  content: "▾";
+  float: right;
+  opacity: 0.8;
+  transition: transform 0.2s ease;
 }
+
+.edu-toggle.active::after,
+.edu-sub.active::after {
+  transform: rotate(180deg);
+}
+
+.edu-toggle:hover,
+.edu-toggle:focus,
+.edu-sub:hover,
+.edu-sub:focus {
+  background: rgba(255,255,255,0.10) !important;
+  color: #ffffff !important;
+  border: 1px solid #F7A8B8 !important;
+  border-bottom: 1px solid #F7A8B8 !important;
+  outline: none !important;
+}
+
+.edu-panel,
+.edu-sub-panel {
+  display: none !important;
+}
+
+.edu-panel.open,
+.edu-sub-panel.open {
+  display: block !important;
+}
+
+.edu-panel {
+  margin-top: 0.65em !important;
+  padding: 0.85em !important;
+  border: 1px solid rgba(247,168,184,0.28) !important;
+  border-radius: 0.65rem !important;
+  background: rgba(255,255,255,0.025) !important;
+}
+
+.edu-subgroup + .edu-subgroup {
+  margin-top: 0.65em !important;
+}
+
+.edu-sub {
+  color: #ffffff !important;
+  font-size: 0.92em !important;
+  padding: 0.62em 0.8em !important;
+}
+
+.edu-sub-panel {
+  padding: 0.55em 0 0.1em 0.85em !important;
+}
+
+.edu-sub-panel a {
+  display: block !important;
+  width: fit-content !important;
+  color: #d8d8d8 !important;
+  border-bottom: none !important;
+  font-size: 0.9em !important;
+  line-height: 1.35 !important;
+  margin: 0.35em 0 !important;
+}
+
+.edu-sub-panel a:hover,
+.edu-sub-panel a:focus {
+  color: #F7A8B8 !important;
+  outline: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  .education-tools-row {
+    grid-template-columns: 1fr !important;
+    gap: 1em !important;
+  }
+
+  .edu-right {
+    max-width: 100% !important;
+    justify-self: stretch !important;
+  }
+
+  .edu-youtube {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* =========================================================
+   FINAL POLISH 2026-05-03
+   Compact Education, Research button animation, white main titles.
+========================================================= */
+
+/* Main title/font color: keep section titles and main buttons white, not grey. */
+#main header.major h2,
+#main .major h2,
+#main h1,
+#main h2,
+#main h3,
+#main h4,
+#main h5,
+#main h6,
+#header h1,
+#header p,
+.profile-actions .button,
+.button {
+  color: #ffffff !important;
+}
+
+#main header.major h2,
+#main .major h2 {
+  opacity: 1 !important;
+}
+
+/* Keep YouTube button border visible in every state. */
+.edu-youtube,
+.edu-youtube:visited,
+.edu-youtube:hover,
+.edu-youtube:focus,
+.edu-youtube:active {
+  border: 1px solid #F7A8B8 !important;
+  border-bottom: 1px solid #F7A8B8 !important;
+  box-shadow: none !important;
+  color: #F7A8B8 !important;
+}
+
+.edu-youtube:hover,
+.edu-youtube:focus {
+  background: rgba(255,255,255,0.10) !important;
+  color: #ffffff !important;
+}
+
+/* Education: make the two controls closer and the dropdown more compact. */
+.education-tools-row {
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 330px) !important;
+  gap: 0.85em !important;
+  margin-top: 1.05em !important;
+}
+
+.edu-youtube {
+  padding: 0.62em 0.9em !important;
+  min-height: 2.55em !important;
+}
+
+.edu-right {
+  max-width: 330px !important;
+}
+
+.edu-toggle,
+.edu-sub {
+  font-size: 0.92em !important;
+  padding: 0.56em 0.78em !important;
+  line-height: 1.2 !important;
+  min-height: 2.35em !important;
+}
+
+/* Slides should be same visual size as Thermodynamics / Transport Phenomena. */
+.edu-toggle {
+  color: #ffffff !important;
+  font-weight: 400 !important;
+}
+
+.edu-sub {
+  color: #ffffff !important;
+  font-weight: 400 !important;
+}
+
+.edu-panel {
+  margin-top: 0.4em !important;
+  padding: 0.55em !important;
+}
+
+.edu-subgroup + .edu-subgroup {
+  margin-top: 0.35em !important;
+}
+
+.edu-sub-panel {
+  padding: 0.35em 0 0.05em 0.65em !important;
+}
+
+.edu-sub-panel a {
+  font-size: 0.82em !important;
+  margin: 0.22em 0 !important;
+}
+
+/* Research dropdown buttons: same visual language as the YouTube button. */
+.research-box {
+  background: transparent !important;
+  border: 1px solid #F7A8B8 !important;
+  border-bottom: 1px solid #F7A8B8 !important;
+  color: #F7A8B8 !important;
+  border-radius: 0.65rem !important;
+  box-shadow: none !important;
+  transition:
+    background-color 0.22s ease,
+    color 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.22s ease,
+    filter 0.22s ease !important;
+}
+
+.research-box:hover,
+.research-box:focus {
+  background: rgba(255,255,255,0.10) !important;
+  border: 1px solid #F7A8B8 !important;
+  border-bottom: 1px solid #F7A8B8 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  filter: none !important;
+  outline: none !important;
+}
+
+.research-box .box-title {
+  color: #F7A8B8 !important;
+  transition: color 0.22s ease !important;
+}
+
+.research-box:hover .box-title,
+.research-box:focus .box-title,
+.research-box.open .box-title {
+  color: #ffffff !important;
+}
+
+.research-box.open {
+  background: rgba(255,255,255,0.08) !important;
+  border-color: #F7A8B8 !important;
+}
+
+.research-box .box-info {
+  border: 1px solid rgba(247,168,184,0.28) !important;
+  background: rgba(255,255,255,0.97) !important;
+  transition: opacity 0.22s ease, transform 0.22s ease !important;
+}
+
+/* Mobile: keep compact spacing. */
+@media screen and (max-width: 768px) {
+  .education-tools-row {
+    gap: 0.7em !important;
+  }
+
+  .edu-right {
+    max-width: 100% !important;
+  }
+
+  .edu-youtube,
+  .edu-toggle,
+  .edu-sub {
+    min-height: 2.35em !important;
+  }
+}
+
+
+/* =========================================================
+   FINAL VISUAL POLISH REQUEST
+   - compact hero
+   - white titles/buttons
+   - 2-column research grid
+   - compact Education controls
+   - minimal Gallery links
+   - smoother nav behavior support
+========================================================= */
+
+html {
+  scroll-behavior: auto !important;
+}
+
+/* Top hero: keep only the GIF and remove wasted vertical space. */
+#header.site-hero {
+  padding: 1.35em 3em 0.95em 3em !important;
+}
+
+#header.site-hero .logo {
+  margin-bottom: 0 !important;
+}
+
+#header.site-hero .logo img {
+  width: min(155px, 32vw) !important;
+  max-height: 105px !important;
+  object-fit: contain !important;
+}
+
+/* White main typography and controls, not grey. */
+#main header.major h2,
+#main .major h2,
+#main h1,
+#main h2,
+#main h3,
+#main h4,
+#main h5,
+#main h6,
+.button,
+a.button,
+.profile-actions .button,
+.gallery-mini-button,
+.edu-toggle,
+.edu-sub,
+.slides-main-button,
+.slides-category-button {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.button,
+a.button,
+.profile-actions .button {
+  border-bottom: 0 !important;
+}
+
+.button:hover,
+a.button:hover,
+.profile-actions .button:hover {
+  color: #ffffff !important;
+}
+
+/* Research: two columns max on large screens, one on mobile. */
+.research-container {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1em !important;
+}
+
+.research-box {
+  min-height: 3.8em !important;
+  padding: 0.95em 1em !important;
+}
+
+.research-box .box-info {
+  overflow: hidden !important;
+  animation: researchFadeIn 0.24s ease both;
+}
+
+@keyframes researchFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.research-box img {
+  max-height: 260px !important;
+  object-fit: contain !important;
+}
+
+/* Education: put YouTube and Slides closer and make Slides readable. */
+.education-tools-row {
+  grid-template-columns: max-content minmax(260px, 330px) !important;
+  justify-content: center !important;
+  align-items: start !important;
+  gap: 0.55em !important;
+  margin-top: 1em !important;
+}
+
+.edu-left,
+.edu-right {
+  width: auto !important;
+}
+
+.edu-right {
+  max-width: 330px !important;
+  justify-self: start !important;
+}
+
+.edu-youtube,
+.edu-youtube:visited,
+.edu-youtube:hover,
+.edu-youtube:focus,
+.edu-youtube:active {
+  border: 1px solid #F7A8B8 !important;
+  border-bottom: 1px solid #F7A8B8 !important;
+  color: #F7A8B8 !important;
+  box-shadow: none !important;
+  min-height: 2.55em !important;
+  padding: 0.62em 0.9em !important;
+}
+
+.edu-youtube:hover,
+.edu-youtube:focus {
+  background: rgba(255,255,255,0.10) !important;
+  color: #ffffff !important;
+}
+
+.edu-toggle,
+.edu-sub {
+  font-size: 0.98em !important;
+  line-height: 1.2 !important;
+  min-height: 2.55em !important;
+  padding: 0.62em 0.9em !important;
+  color: #ffffff !important;
+}
+
+.edu-panel {
+  margin-top: 0.35em !important;
+  padding: 0.55em !important;
+}
+
+.edu-subgroup + .edu-subgroup {
+  margin-top: 0.32em !important;
+}
+
+.edu-sub-panel {
+  padding: 0.35em 0 0.05em 0.65em !important;
+}
+
+.edu-sub-panel a {
+  font-size: 0.86em !important;
+}
+
+/* Gallery: replace large feature cards with two minimal navigation buttons. */
+.gallery-minimal-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75em;
+  flex-wrap: wrap;
+  margin-top: 1.2em;
+}
+
+.gallery-mini-button,
+.gallery-mini-button:visited,
+.gallery-mini-button:hover,
+.gallery-mini-button:focus,
+.gallery-mini-button:active {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.4em;
+  padding: 0.48em 0.9em;
+  border: 1px solid #F7A8B8 !important;
+  border-bottom: 1px solid #F7A8B8 !important;
+  border-radius: 0.65rem;
+  color: #ffffff !important;
+  background: transparent;
+  box-shadow: none !important;
+  font-size: 0.88em;
+  text-decoration: none;
+}
+
+.gallery-mini-button:hover,
+.gallery-mini-button:focus {
+  background: rgba(255,255,255,0.10) !important;
+  color: #ffffff !important;
+}
+
+@media screen and (max-width: 980px) {
+  .research-container {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #header.site-hero {
+    padding: 1.05em 1.2em 0.65em 1.2em !important;
+  }
+
+  #header.site-hero .logo img {
+    width: 118px !important;
+    max-height: 82px !important;
+  }
+
+  .education-tools-row {
+    grid-template-columns: 1fr !important;
+    justify-content: stretch !important;
+    gap: 0.55em !important;
+  }
+
+  .edu-right {
+    max-width: 100% !important;
+    justify-self: stretch !important;
+  }
+
+  .edu-youtube,
+  .edu-toggle,
+  .edu-sub {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .gallery-minimal-links {
+    gap: 0.55em;
+  }
+
+  .gallery-mini-button {
+    width: min(100%, 16rem);
+  }
+}
+
+
+/* =========================================================
+   FINAL MICRO-POLISH: scroll, white buttons, wider slides
+   ========================================================= */
+
+/* Avoid double-smooth / jumpy nav animation. Stellar's scrolly handles it. */
+html {
+  scroll-behavior: auto !important;
+}
+
+/* Force the key button labels to stay white in all states. */
+.profile-actions .button,
+.profile-actions .button:visited,
+.profile-actions .button:hover,
+.profile-actions .button:focus,
+.profile-actions .button:active,
+a.button,
+a.button:visited,
+a.button:hover,
+a.button:focus,
+a.button:active,
+.edu-toggle,
+.edu-toggle:visited,
+.edu-toggle:hover,
+.edu-toggle:focus,
+.edu-toggle:active,
+.edu-sub,
+.edu-sub:visited,
+.edu-sub:hover,
+.edu-sub:focus,
+.edu-sub:active,
+.gallery-mini-button,
+.gallery-mini-button:visited,
+.gallery-mini-button:hover,
+.gallery-mini-button:focus,
+.gallery-mini-button:active {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Keep YouTube pink, but preserve full border in hover. */
+.edu-youtube,
+.edu-youtube:visited,
+.edu-youtube:hover,
+.edu-youtube:focus,
+.edu-youtube:active {
+  border-color: #F7A8B8 !important;
+  border-bottom-color: #F7A8B8 !important;
+  box-shadow: inset 0 0 0 1px #F7A8B8 !important;
+  color: #F7A8B8 !important;
+  -webkit-text-fill-color: #F7A8B8 !important;
+}
+
+.edu-youtube:hover,
+.edu-youtube:focus {
+  background: rgba(255,255,255,0.10) !important;
+}
+
+/* Slides: a bit wider, while staying close to YouTube. */
+.education-tools-row {
+  grid-template-columns: max-content minmax(360px, 480px) !important;
+  gap: 0.7em !important;
+}
+
+.edu-right {
+  max-width: 480px !important;
+  width: 100% !important;
+}
+
+.edu-toggle,
+.edu-sub {
+  min-width: 100% !important;
+  text-align: left !important;
+}
+
+.edu-toggle {
+  font-size: 1.02em !important;
+}
+
+/* If Stellar button rules inject gray, override panel links cleanly. */
+.edu-sub-panel a,
+.edu-sub-panel a:visited {
+  color: #d8d8d8 !important;
+  -webkit-text-fill-color: #d8d8d8 !important;
+}
+
+.edu-sub-panel a:hover,
+.edu-sub-panel a:focus {
+  color: #F7A8B8 !important;
+  -webkit-text-fill-color: #F7A8B8 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .education-tools-row {
+    grid-template-columns: 1fr !important;
+    gap: 0.55em !important;
+  }
+
+  .edu-right {
+    max-width: 100% !important;
+  }
+}
+
+/* =========================
+   Gallery pages and lightbox
+   Moved from inline <style> blocks for maintainability.
+========================= */
+body {
+        background-color: #141d26;
+        color: #ffffff;
+      }
+
+      .gallery-page #main > .main {
+        padding-top: 2em;
+      }
+
+      .gallery-intro {
+        color: rgba(255,255,255,0.72);
+        margin-top: -0.75em;
+      }
+
+      .gallery-grid-page {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.15em;
+        margin-top: 1.4em;
+      }
+
+      .gallery-card {
+        background: rgba(255,255,255,0.045);
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 0.65rem;
+        padding: 0.65em;
+        transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+      }
+
+      .gallery-card:hover {
+        transform: translateY(-2px);
+        background: rgba(255,255,255,0.075);
+        border-color: #F7A8B8;
+      }
+
+      .gallery-card a.image-link {
+        display: block;
+        cursor: zoom-in;
+        border-bottom: none;
+      }
+
+      .gallery-thumb {
+        width: 100%;
+        height: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255,255,255,0.035);
+        border-radius: 0.45rem;
+        overflow: hidden;
+      }
+
+      .gallery-thumb img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .gallery-caption {
+        margin: 0.75em 0 0 0;
+        font-size: 0.78em;
+        line-height: 1.42;
+        color: rgba(255,255,255,0.82);
+        text-align: left;
+      }
+
+      .gallery-caption a {
+        color: #F7A8B8 !important;
+        border-bottom: none;
+      }
+
+      .gallery-caption a:hover {
+        color: #ffffff !important;
+      }
+
+      .back-link {
+        margin-top: 1.4em;
+        text-align: center;
+      }
+
+      .back-link .button {
+        color: #ffffff !important;
+      }
+
+      .gallery-lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: rgba(5, 10, 16, 0.94);
+        padding: 3.5rem 1rem 4.2rem 1rem;
+      }
+
+      .gallery-lightbox.is-open {
+        display: flex;
+      }
+
+      .gallery-lightbox img {
+        max-width: min(94vw, 1200px);
+        max-height: 78vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 0.35rem;
+        box-shadow: 0 1rem 3rem rgba(0,0,0,0.45);
+      }
+
+      .gallery-lightbox-caption {
+        position: fixed;
+        left: 1rem;
+        right: 1rem;
+        bottom: 0.75rem;
+        text-align: center;
+        color: #ffffff;
+        font-size: 0.88rem;
+        line-height: 1.35;
+        opacity: 0.9;
+        pointer-events: none;
+      }
+
+      .gallery-lightbox button {
+        position: fixed;
+        z-index: 10001;
+        border: 1px solid rgba(247,168,184,0.6);
+        border-radius: 999px;
+        background: rgba(255,255,255,0.12);
+        color: #ffffff !important;
+        width: 2.75rem;
+        height: 2.75rem;
+        line-height: 2.75rem;
+        padding: 0;
+        text-align: center;
+        font-size: 1.35rem;
+        cursor: pointer;
+        transition: background 0.2s ease, border-color 0.2s ease;
+      }
+
+      .gallery-lightbox button:hover {
+        background: rgba(255,255,255,0.24);
+        border-color: #F7A8B8;
+      }
+
+      .gallery-lightbox-close {
+        top: 0.8rem;
+        right: 0.8rem;
+      }
+
+      .gallery-lightbox-prev {
+        left: 0.8rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .gallery-lightbox-next {
+        right: 0.8rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      @media screen and (max-width: 600px) {
+        .gallery-grid-page {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery-thumb {
+          height: 210px;
+        }
+
+        .gallery-lightbox-prev,
+        .gallery-lightbox-next {
+          top: auto;
+          bottom: 3.5rem;
+          transform: none;
+        }
+      }
+
+/* =========================================================
+   EDUCATION EXTRA BUTTON
+   Adds support for a third Education button: "Other videos".
+   Keep this as an additive override; do not remove previous calibration.
+========================================================= */
+
+.edu-other,
+.edu-other:visited,
+.edu-other:hover,
+.edu-other:focus,
+.edu-other:active {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.7em !important;
+  padding: 0.62em 0.9em !important;
+  min-height: 2.55em !important;
+  border: 1px solid #F7A8B8 !important;
+  border-bottom: 1px solid #F7A8B8 !important;
+  border-radius: 0.65rem !important;
+  color: #F7A8B8 !important;
+  -webkit-text-fill-color: #F7A8B8 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  box-shadow: inset 0 0 0 1px #F7A8B8 !important;
+  line-height: 1.2 !important;
+}
+
+.edu-other .icon {
+  font-size: 1.35em !important;
+  line-height: 1 !important;
+}
+
+.edu-other:hover,
+.edu-other:focus {
+  background: rgba(255,255,255,0.10) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  outline: none !important;
+}
+
+/* With YouTube + Other videos + Slides, keep the row compact and stable. */
+.education-tools-row {
+  grid-template-columns: max-content max-content minmax(360px, 480px) !important;
+  gap: 0.7em !important;
+}
+
+@media screen and (max-width: 900px) {
+  .education-tools-row {
+    grid-template-columns: 1fr !important;
+    gap: 0.55em !important;
+  }
+
+  .edu-youtube,
+  .edu-other,
+  .edu-toggle,
+  .edu-sub {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
